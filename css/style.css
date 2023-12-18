@@ -1,9 +1,6 @@
 /* TO DO
-- PAGE WEB CENTRE
-- POINTER SUR BOUTON "RECHERCHER" NE PRENDS PAS TOUT LE BOUTON A CAUSE DE SPACE-EVENLY + ADD ICONE LOUPE
+- PAGE WEB CENTRE EN MOBILE + PADING DU BODY ?
 - OU METTRE DES EM POUR LES DIMENSION?
-- RESIZE ACTIVITES CARDS POUR TABLETTE & MOBILE
-- PADDING .INFO_GROUP RENTRE DANS LE HEADER EN VERSION MOBILE
 */
 
 /****** General ***********/
@@ -11,8 +8,6 @@
   font-family: "Raleway", sans-serif;
   padding: 0;
   margin: 0;
-  background: red;
-  /* box-sizing: border-box; */
 }
 
 :root {
@@ -148,7 +143,7 @@ footer div {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: auto;
+  width: 377px;
   height: 50px;
   border-radius: 15px;
   border: 1px solid var(--main-bg-color);
@@ -160,7 +155,7 @@ footer div {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  width: 50px;
   height: 100%;
   background: var(--main-bg-color);
 }
@@ -224,6 +219,7 @@ footer div {
 .info {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
 }
 
@@ -360,19 +356,19 @@ footer div {
 }
 
 .activites_cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .activites_card {
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px;
   box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.1);
 }
 
 .activites_card img {
   max-width: 100%;
-  width: 298px;
+  width: 100%;
   height: 380px;
   border-radius: 20px 20px 0 0;
   object-fit: cover;
@@ -385,6 +381,7 @@ footer div {
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
+/****** VERSION TABLETTE ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
   .section-filters {
@@ -433,6 +430,7 @@ footer div {
   }
 }
 
+/****** VERSION MOBILE ***********/
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
   body {
@@ -473,8 +471,15 @@ footer div {
     border-top: none;
   }
 
-  .info_group {
-    /* padding-top: 30px; */
+  #searchform {
+    width: 100%;
+  }
+
+  #searchform button {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
   .search-button span {
@@ -486,6 +491,24 @@ footer div {
   }
 
   .filters .filter {
+    justify-content: center;
     width: calc(50% - 7.5px);
+  }
+
+  .hebergements-and-populaires {
+    flex-direction: column-reverse;
+    gap: 50px;
+  }
+
+  #hebergements {
+    background-color: white;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+
+  footer div {
+    width: 100%;
   }
 }
