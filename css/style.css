@@ -472,8 +472,13 @@ footer div {
     border-bottom: 2px solid var(--main-color);
   }
 
-  .nav_links li a.actif {
+  .nav_links li a.actif, .nav_links li a:hover {
     border-top: none;
+  }
+
+  .nav_links .inactif:hover {
+    color: rgb(190, 230, 250);
+    border-bottom: 2px solid rgb(190, 230, 250);
   }
 
   .info_group {
@@ -500,13 +505,12 @@ footer div {
   }
 
   .filters .filter {
-    justify-content: start;
     width: calc(50% - 7.5px);
   }
 
   .hebergements-and-populaires {
     flex-direction: column-reverse;
-    gap: 50px;
+    gap: 15px;
   }
 
   #hebergements {
@@ -514,8 +518,30 @@ footer div {
     background-color: white;
   }
 
+  .hebergements-title {
+    gap: 15px;
+  }
+
   #populaires {
     border-radius: 0px;
+    margin-top: 0;
+  }
+
+  .populaires-title {
+    margin-bottom: 15px;
+  }
+
+  .populaires-cards {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .populaires-cards .card {
+    margin-top: 0;
+  }
+
+  .activites {
+    padding-bottom: 65px;
   }
 
   footer {
