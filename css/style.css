@@ -50,6 +50,9 @@ a {
 }
 
 .fa-location-dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
 }
 
@@ -167,6 +170,7 @@ footer div {
   text-align: left;
   border: none;
   outline: none;
+  width: 150px;
   height: 100%;
 }
 
@@ -411,8 +415,7 @@ footer div {
   .populaires-cards {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px;
   }
 
   .populaires-cards a {
