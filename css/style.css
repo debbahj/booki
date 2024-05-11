@@ -103,12 +103,8 @@ header {
   padding-top: 12px;
 }
 
+/* CORRECTION */
 .nav_links li a:hover {
-  color: rgb(190, 230, 250);
-  border-top: 2px solid rgb(190, 230, 250);
-}
-
-.nav_links li a.actif {
   color: var(--main-color);
   border-top: 2px solid var(--main-color);
 }
@@ -361,10 +357,16 @@ footer div {
   padding: 30px;
 }
 
+/* CORRECTION */
 .activites_cards {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* CORRECTION */
+.activites_cards a {
+  width: 100%;
 }
 
 .activites_card {
@@ -468,17 +470,16 @@ footer div {
     border-bottom: 2px solid var(--main-bg-color);
   }
 
-  .nav_links li:first-child {
-    border-bottom: 2px solid var(--main-color);
-  }
-
-  .nav_links li a.actif, .nav_links li a:hover {
+  /* CORRECTION */
+  .nav_links li:hover {
     border-top: none;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
   }
 
-  .nav_links .inactif:hover {
-    color: rgb(190, 230, 250);
-    border-bottom: 2px solid rgb(190, 230, 250);
+  /* CORRECTION */
+  .nav_links li a:hover {
+    border-top: none;
   }
 
   .info_group {
@@ -553,5 +554,11 @@ footer div {
   footer div {
     width: auto;
     padding: 0;
+  }
+
+  /* CORRECTION */
+  .activites_cards {
+    display: flex;
+    flex-direction: column;
   }
 }
